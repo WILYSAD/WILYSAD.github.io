@@ -8,7 +8,7 @@ body, h1, h2, h3, p, ul, li, a, input, textarea, button {
 body {
     line-height: 1.6;
     color: #fff; 
-    font-family: Arial, sans-serif; 
+    font-family: 'Bangers', cursive;
     padding: 0;
     margin: 0;
     display: flex;
@@ -18,7 +18,6 @@ body {
     background-size: cover; 
     background-position: center; 
     background-attachment: fixed; 
-    font-family: 'Bangers', cursive;
 }
 
 h2, h3 {
@@ -33,15 +32,6 @@ h2, h3 {
     src: url('path/to/Technica-Black.woff') format('woff'); 
 }
 
-h2, h3 {
-    font-family: 'Technica Black', sans-serif; 
-    font-weight: bold; 
-}
-
-body {
-    font-family: 'Bangers', cursive;
-}
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -53,7 +43,6 @@ header {
     color: #fff;
     padding: 10px 0; 
     position: sticky; 
-    width: 100%; 
     top: 0; 
     left: 0;
     z-index: 1000; 
@@ -227,11 +216,6 @@ section {
     color: #ffffff; 
 }
 
-#menu-imagenes h2 {
-    font-size: 24px;
-    margin-bottom: 20px; 
-}
-
 .gallery-items {
     display: grid;
     flex-wrap: wrap;
@@ -363,5 +347,52 @@ footer {
 
     .footer-logo {
         text-align: center;
+    }
+
+    header .logo {
+        height: 60px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        left: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        position: relative;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .menu-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-item {
+        width: 80%; 
+        margin: 10px 0;
+    }
+
+    .carousel-container {
+        height: 50vh; 
+    }
+
+    .carousel-item img {
+        height: 100%;
+    }
+
+    .gallery-items {
+        grid-template-columns: 1fr 1fr; 
+    }
+
+    .gallery-item {
+        width: 100%; 
+        height: 250px;
     }
 }
