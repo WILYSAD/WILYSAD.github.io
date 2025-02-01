@@ -87,6 +87,7 @@ header nav ul {
     header nav ul {
         flex-direction: row; /* Mantiene la disposición en fila */
         justify-content: center; /* Centra los elementos */
+        width: 100%; /* Evita que el ancho sea mayor que el disponible */
     }
 }
 
