@@ -57,28 +57,40 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
+    box-sizing: border-box; 
+    overflow: hidden; 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  
+}
+
+
+
+header .logo {
+    height: 80px;
+    width: auto;
 }
 
 header nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 20px; 
     padding: 0;
     margin: 0;
-    justify-content: center; 
+    flex-wrap: nowrap; /* Esto evita el salto a la siguiente línea al hacer zoom */
 }
 
-header .logo {
-    height: 80px;
-    width: auto;
-    margin-right: auto; 
+@media screen and (max-width: 768px) {
+    header nav ul {
+        flex-direction: row; /* Mantiene la disposición en fila */
+        justify-content: center; 
+        width: 100%;
+        flex-wrap: wrap; /* Permite que se envuelvan los elementos en pantallas pequeñas */
+    }
 }
-
 header nav ul li {
     margin: 0;
 }
@@ -109,7 +121,6 @@ header nav ul li a.btn-iniciar:hover {
     background-color: rgba(85, 85, 85, 0.9);
 }
 
-
 @media (max-width: 768px) {
     header {
         flex-wrap: wrap;
@@ -129,8 +140,6 @@ header nav ul li a.btn-iniciar:hover {
         margin-bottom: 10px;
     }
 }
-
-
 
 
 
@@ -377,7 +386,26 @@ footer {
 }
 
 @media (max-width: 768px) {
+   
+    header {
+      
+        align-items: center;
+        text-align: center;
+    }
 
+    header nav ul {
+       
+        gap: 10px;
+    }
+
+   
+    header .logo {
+        height: 60px;
+    }
+
+    section {
+        padding: 20px;
+    }
 
  
     .carousel-container {
