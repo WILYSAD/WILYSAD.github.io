@@ -58,6 +58,8 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
+    box-sizing: border-box; /* Asegura que el padding no se sume al tamaño total del header */
+    overflow: hidden; /* Evita que los elementos se desborden */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -162,17 +164,17 @@ section {
     transition: transform 0.5s ease-in-out;
 }
 
+.carousel-item {
+    flex: 0 0 100%; 
+    height: 100%;
+}
 
 .carousel-item {
     flex: 0 0 100%;
     height: 100%;
     background-size: cover;
 }
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+
 
 
 .menu-item {
