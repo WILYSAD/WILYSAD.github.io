@@ -162,17 +162,17 @@ section {
     transition: transform 0.5s ease-in-out;
 }
 
-.carousel-item {
-    flex: 0 0 100%; 
-    height: 100%;
-}
 
 .carousel-item {
     flex: 0 0 100%;
     height: 100%;
     background-size: cover;
 }
-
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 
 .menu-item {
@@ -398,6 +398,12 @@ footer {
  
     .carousel-container {
         height: 40vh;
+    }
+
+    .carousel-item img {
+        width: 100vw; /* Asegura que ocupe toda la pantalla */
+        height: 100%;
+        object-fit: cover;
     }
 
     .menu-items, .menu-especial-items, .gallery-items {
