@@ -149,14 +149,15 @@ section {
 
 .carousel-container {
     width: 100%;
-    height: 60vh;
+    height: 60vh; 
     overflow: hidden;
-    position: relative; 
+    margin: 0;
+    padding: 0;
+    position: relative;
 }
-
 .carousel {
     display: flex;
-    width: 100%;
+     width: 100%;
     height: 100%;
     transition: transform 0.5s ease-in-out;
 }
@@ -418,4 +419,35 @@ footer {
     .footer-logo img {
         width: 100px;
     }
+}
+
+
+
+.ig-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 65px; 
+    height: 65px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    z-index: 1000;
+    overflow: hidden; /* Evita que la imagen sobresalga */
+}
+
+.ig-bubble img {
+    max-width: 55px; /* Aumenta el tamaño de la imagen */
+    max-height: 55px;
+    object-fit: cover;
+}
+
+/* Efecto de hover */
+.ig-bubble:hover {
+    transform: scale(1.1);
 }
