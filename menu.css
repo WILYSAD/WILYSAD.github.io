@@ -73,12 +73,21 @@ header .logo {
     width: auto;
 }
 
+/* Estilo general para el menú */
 header nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 20px; /* Mantiene la distancia entre los elementos */
     padding: 0;
     margin: 0;
+}
+
+/* Media query para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    header nav ul {
+        flex-direction: row; /* Mantiene la disposición en fila */
+        justify-content: center; /* Centra los elementos */
+    }
 }
 
 header nav ul li {
