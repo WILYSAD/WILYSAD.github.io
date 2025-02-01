@@ -250,16 +250,12 @@ section {
 #menu-imagenes h2 {
     font-family: 'Technica Black', sans-serif; 
     font-weight: bold; 
-    font-size: 36px; 
+    font-size: 24px; 
     text-align: center; 
     margin-bottom: 20px; 
     color: #ffffff; 
 }
 
-#menu-imagenes h2 {
-    font-size: 24px;
-    margin-bottom: 20px; 
-}
 
 .gallery-items {
     display: grid;
@@ -284,6 +280,14 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover; 
+}
+
+/* Media query para dispositivos donde el zoom (o tamaño de pantalla) provoca la disposición en 2 columnas */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .gallery-items {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+        grid-template-rows: repeat(3, 1fr); /* Tres filas */
+    }
 }
 
 
@@ -388,17 +392,6 @@ footer {
     margin-right: 15px;
 }
 
-@media (max-width: 1024px) {
-    .gallery-items {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
-    }
-}
-
-@media (max-width: 768px) {
-    .gallery-items {
-        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
-    }
-}
 
 @media (max-width: 768px) {
    
