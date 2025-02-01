@@ -236,8 +236,6 @@ header nav ul li a.btn-iniciar:hover {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: flex-start;
-
-    
 }
 
 .menu-item {
@@ -589,13 +587,14 @@ footer {
     .menu-container {
         flex-direction: column; /* Muestra las tarjetas en una columna */
         align-items: center; /* Centra las tarjetas */
-        gap: 10px; /* Ajusta el espacio entre las tarjetas */
+      
     }
 
     .menu-item {
         width: 100%; /* Cada tarjeta ocupa todo el ancho disponible */
         max-width: none; /* Elimina el límite de ancho máximo */
         height: auto; /* Ajusta la altura automáticamente */
+        margin-bottom: 20px; /* Espacio entre las cards */
     }
 
     .menu-item img {
