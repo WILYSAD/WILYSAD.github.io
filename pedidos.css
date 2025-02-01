@@ -579,7 +579,13 @@ footer {
 }
 
 /* Ajusta el diseño de las tarjetas en pantallas móviles */
+/* Oculta el carrito en pantallas móviles */
 @media (max-width: 768px) {
+    .cart-container {
+        display: none; /* Oculta el contenedor del carrito */
+    }
+
+
     .menu-container {
         flex-direction: column; /* Muestra las tarjetas en una columna */
         align-items: center; /* Centra las tarjetas */
