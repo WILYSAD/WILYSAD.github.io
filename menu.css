@@ -49,7 +49,6 @@ body {
 }
 
 
-
 header {
     background: transparent;
     color: #fff;
@@ -58,37 +57,26 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-sizing: border-box; /* Asegura que el padding no se sume al tamaño total del header */
-    overflow: hidden; /* Evita que los elementos se desborden */
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    justify-content: center; 
+}
 
 header .logo {
     height: 80px;
     width: auto;
-}
-
-/* Estilo general para el menú */
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px; /* Mantiene la distancia entre los elementos */
-    padding: 0;
-    margin: 0;
-}
-
-/* Media query para dispositivos móviles */
-@media screen and (max-width: 768px) {
-    header nav ul {
-        flex-direction: row; /* Mantiene la disposición en fila */
-        justify-content: center; /* Centra los elementos */
-        width: 100%; /* Evita que el ancho sea mayor que el disponible */
-    }
+    margin-right: auto; 
 }
 
 header nav ul li {
@@ -121,6 +109,7 @@ header nav ul li a.btn-iniciar:hover {
     background-color: rgba(85, 85, 85, 0.9);
 }
 
+
 @media (max-width: 768px) {
     header {
         flex-wrap: wrap;
@@ -140,6 +129,8 @@ header nav ul li a.btn-iniciar:hover {
         margin-bottom: 10px;
     }
 }
+
+
 
 
 
@@ -388,13 +379,13 @@ footer {
 @media (max-width: 768px) {
    
     header {
-        flex-direction: column;
+       
         align-items: center;
         text-align: center;
     }
 
     header nav ul {
-        flex-direction: column;
+        
         gap: 10px;
     }
 
@@ -469,4 +460,3 @@ footer {
 .ig-bubble:hover {
     transform: scale(1.1);
 }
-
