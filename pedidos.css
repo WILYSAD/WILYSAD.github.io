@@ -21,7 +21,6 @@ body {
     font-family: 'Bangers', cursive;
 }
 
-
 header {
     background: transparent;
     color: #fff;
@@ -32,15 +31,9 @@ header {
     z-index: 1000;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-
-header .logo {
-    height: 80px;
-    width: auto;
 }
 
 header nav ul {
@@ -49,6 +42,13 @@ header nav ul {
     gap: 20px;
     padding: 0;
     margin: 0;
+    justify-content: center; 
+}
+
+header .logo {
+    height: 80px;
+    width: auto;
+    margin-right: auto; 
 }
 
 header nav ul li {
@@ -104,6 +104,103 @@ header nav ul li a.btn-iniciar:hover {
 
 
 
+
+/* Posiciona el carrito a la derecha con menor altura */
+.cart-container {
+    margin-top: 232px; /* Espaciado entre el carrito y las promociones */
+    position: sticky;  
+    width: 360px; /* Más angosto */
+    min-height: 200px; /* Menos alto */
+    position: absolute;
+    top: 20px;
+    right: 100px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* "Tu Carrito" más grande y negrita */
+.cart-header {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 1.4em; /* Más grande */
+    font-weight: bold; /* Negrita */
+    color: #333;
+}
+
+/* Espaciado para el contenido */
+.card-body {
+    margin-top: 30px;
+    max-height: 170px;
+    overflow-y: auto;
+}
+
+/* Lista de productos */
+#cart-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Línea divisoria */
+.divider {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+/* Ajuste para los párrafos */
+.empty-message p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+    color: #888;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+/* Centrado del mensaje vacío en el carrito */
+.empty-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px; /* Mueve el contenido un poco más abajo */
+    margin-bottom: 0;
+    height: 100%;
+}
+
+/* Botón con texto alineado a la izquierda */
+.where-to-order {
+    background-color: #f0f0f0;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.where-to-order:hover {
+    background-color: #ddd;
+}
+
+
+
+
+
+
+
+
+
 #menu-pedir {
     max-width: 1200px;
     margin: 0 auto;
@@ -138,7 +235,9 @@ header nav ul li a.btn-iniciar:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    justify-content: flex-start;
+
+    
 }
 
 .menu-item {
