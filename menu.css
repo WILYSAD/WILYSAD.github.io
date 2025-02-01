@@ -250,13 +250,12 @@ section {
 
 .gallery-items {
     display: grid;
-    flex-wrap: wrap;
     grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
-    justify-content: center; 
+    gap: 20px;
+    justify-content: center;
     align-items: center;
-    margin: 0 auto; 
-    max-width: 1200px; 
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .gallery-item {
@@ -405,6 +404,11 @@ footer {
         align-items: center;
     }
 
+    .gallery-items {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
+    }
+}
+
     .menu-item, .especial-item, .gallery-item {
         width: 90%;
     }
@@ -418,4 +422,9 @@ footer {
     .footer-logo img {
         width: 100px;
     }
-}
+    
+    @media (max-width: 480px) {
+        .gallery-items {
+            grid-template-columns: repeat(1, 1fr); /* 1 columna en pantallas pequeñas */
+        }
+    }
