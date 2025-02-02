@@ -80,15 +80,15 @@ header nav ul {
     gap: 20px; 
     padding: 0;
     margin: 0;
-    flex-wrap: nowrap; /* Esto evita el salto a la siguiente línea al hacer zoom */
+    flex-wrap: nowrap;
 }
 
 @media screen and (max-width: 768px) {
     header nav ul {
-        flex-direction: row; /* Mantiene la disposición en fila */
+        flex-direction: row; 
         justify-content: center; 
         width: 100%;
-        flex-wrap: wrap; /* Permite que se envuelvan los elementos en pantallas pequeñas */
+        flex-wrap: wrap; 
     }
 }
 header nav ul li {
@@ -248,47 +248,15 @@ section {
 }
 
 #menu-imagenes h2 {
-    font-family: 'Technica Black', sans-serif; 
-    font-weight: bold; 
-    font-size: 24px; 
-    text-align: center; 
-    margin-bottom: 20px; 
-    color: #ffffff; 
+    font-family: 'Technica Black', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
 }
 
 
-.gallery-items {
-    display: grid;
-    flex-wrap: wrap;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
-    justify-content: center; 
-    align-items: center;
-    margin: 0 auto; 
-    max-width: 1200px; 
-}
 
-.gallery-item {
-    width: 400px; 
-    height: 400px;
-    overflow: hidden;
-    background-color: #f0f0f0; 
-    border-radius: 8px; 
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-}
-
-/* Media query para dispositivos donde el zoom (o tamaño de pantalla) provoca la disposición en 2 columnas */
-@media (max-width: 1024px) and (min-width: 768px) {
-    .gallery-items {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-        grid-template-rows: repeat(3, 1fr); /* Tres filas */
-    }
-}
 
 
 
@@ -421,18 +389,18 @@ footer {
     }
 
     .carousel-item img {
-        width: 100vw; /* Asegura que ocupe toda la pantalla */
+        width: 100vw;
         height: 100%;
         object-fit: cover;
     }
 
-    .menu-items, .menu-especial-items, .gallery-items {
+    .menu-items, .menu-especial-items {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .menu-item, .especial-item, .gallery-item {
+    .menu-item, .especial-item{
         width: 90%;
     }
 
@@ -464,16 +432,66 @@ footer {
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
     z-index: 1000;
-    overflow: hidden; /* Evita que la imagen sobresalga */
+    overflow: hidden; 
 }
 
 .ig-bubble img {
-    max-width: 55px; /* Aumenta el tamaño de la imagen */
+    max-width: 55px; 
     max-height: 55px;
     object-fit: cover;
 }
 
-/* Efecto de hover */
+
 .ig-bubble:hover {
     transform: scale(1.1);
+}
+
+
+#menu-imagenes {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#menu-imagenes h2 {
+    font-family: 'Technica Black', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.gallery-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.gallery-item {
+    width: 100%;
+    aspect-ratio: 1/1; 
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); 
+}
+
+
+@media (max-width: 767px) {
+    .gallery-items {
+        grid-template-columns: repeat(2, 1fr); 
+    }
 }
