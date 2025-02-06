@@ -5,12 +5,11 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='pedidos.css'>
-    <script src="pedidos.js"></script>
-   
+    <link rel='stylesheet' type='text/css' media='screen' href='pedido.css'>
+    <script src='pedido.js'></script>
 </head>
 <body>
-
+    
     <header>
         <div class="container">
             <img src="ogburger/images/ogSinFondo.png" alt="Logo" class="logo">
@@ -25,382 +24,141 @@
         </div>
     </header>
 
-      <!-- Modal de Iniciar sesión -->
-      <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span id="closeModal" class="close">&times;</span>
-            <h2>Iniciar sesión</h2>
-            <form>
-                <input type="text" placeholder="Usuario" required>
-                <input type="password" placeholder="Contraseña" required>
-                <button type="submit">Entrar</button>
-            </form>
-        </div>
-    </div>
-    
-  
-    <section id="menu-pedir">
-        <div class="container">
-   
-
-   
-    <body>
-        <!-- Header -->
-        
-    
-        <!-- Tabla de Hamburguesas -->
-        <section id="menu-pedir">
-            <br>
-            <div id="promociones">
-            <h2 class="menu-title">Promociones</h2>
-            <br>
-            </div>
-        </section>
-
-
-        <div class="cart-container">
+    <div class="cart-wrapper">
+        <div class="shopping-cart">
             <div class="cart-header">
                 <span>Tu Carrito</span>
             </div>
-            <div class="card-body">
-              <div class="search-section">
-                <button class="where-to-order">📍 ¿Dónde quieres pedir?</button>
-              </div>
-          
-              <ul id="cart-list">
-                  <!-- Los elementos agregados aparecerán aquí -->
-              </ul>
-          
-              <hr class="divider">
-          
-              <div class="empty-message">
-                  <p>Tu carrito está vacío.</p>
-                  <p>Los productos que agregues aparecerán aquí.</p>
-              </div>
-            </div>
-          </div>
-
-
-          
-
-        <section id="menu-pedir">
-               
-                <div class="menu-container">
-                    <!-- Card 1 -->
-                    <div class="menu-item">
-                        <img src="ogburger/Promociones/Promociones.jpg" alt="Combo Para 2 Full">
-                        <div class="menu-info">
-                            <h3>Combo Para 2 Full</h3>
-                            <p>Dos burgers, dos fries, dos bebidas y cremas (mayonesa, ketchup y ají).</p>
-                            <div class="price-container">
-                                <span class="current-price">S/ 69.90</span>
-                                <span class="old-price">S/ 92.00</span>
-                                
-                                <div class="quantity-controls circle"> 
-                                    <button class="decrease">−</button> <!-- Botón de menos -->
-                                    <span id="quantity" class="quantity-value hidden">0</span> <!-- Contador inicia en 0 y está oculto -->
-                                    <button class="increase">+</button> <!-- Botón de más -->
-                                </div>
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="menu-item">
-                        <img src="ogburger/Promociones/promociones1.jpg" alt="Combo Para 2 Full">
-                        <div class="menu-info">
-                            <h3>Combo Para 2 Full</h3>
-                            <p>Dos burgers, dos fries, dos bebidas y cremas (mayonesa, ketchup y ají).</p>
-                            <div class="price-container">
-                                <span class="current-price">S/ 69.90</span>
-                                <span class="old-price">S/ 92.00</span>
-                                <div class="quantity-controls circle"> 
-                                    <button class="decrease">−</button> <!-- Botón de menos -->
-                                    <span id="quantity" class="quantity-value hidden">0</span> <!-- Contador inicia en 0 y está oculto -->
-                                    <button class="increase">+</button> <!-- Botón de más -->
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="menu-item">
-                        <img src="ogburger/Promociones/promociones2.jpg" alt="Combo Para 2 Full">
-                        <div class="menu-info">
-                            <h3>Combo Para 2 Full</h3>
-                            <p>Dos burgers, dos fries, dos bebidas y cremas (mayonesa, ketchup y ají).</p>
-                            <div class="price-container">
-                                <span class="current-price">S/ 69.90</span>
-                                <span class="old-price">S/ 92.00</span>
-                                <div class="quantity-controls circle"> 
-                                    <button class="decrease">−</button> <!-- Botón de menos -->
-                                    <span id="quantity" class="quantity-value hidden">0</span> <!-- Contador inicia en 0 y está oculto -->
-                                    <button class="increase">+</button> <!-- Botón de más -->
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                    <div class="menu-item">
-                        <img src="ogburger/Promociones/Promociones3.jpg" alt="Combo Para 2 Full">
-                        <div class="menu-info">
-                            <h3>Combo Para 2 Full</h3>
-                            <p>Dos burgers, dos fries, dos bebidas y cremas (mayonesa, ketchup y ají).</p>
-                            <div class="price-container">
-                                <span class="current-price">S/ 69.90</span>
-                                <span class="old-price">S/ 92.00</span>
-                                <div class="quantity-controls circle"> 
-                                    <button class="decrease">−</button> <!-- Botón de menos -->
-                                    <span id="quantity" class="quantity-value hidden">0</span> <!-- Contador inicia en 0 y está oculto -->
-                                    <button class="increase">+</button> <!-- Botón de más -->
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-              
+            <div class="cart-body">
+                <div class="search-section">
+                    <button class="where-to-order">📍 ¿Dónde quieres pedir?</button>
                 </div>
-        </section>
-
-
-        <section id="menu-pedir">
-            <br><div id="burger">
-            <h2 class="menu-title">Burgers</h2>
-            <br>
+            
+                <ul id="cart-list">
+                    <!-- Los elementos agregados aparecerán aquí -->
+                </ul>
+            
+                <hr class="divider">
+            
+                <div class="empty-message">
+                    <p>Tu carrito está vacío.</p>
+                    <p>Los productos que agregues aparecerán aquí.</p>
+                </div>
+            </div>
         </div>
-        </section>
-
-        <section id="menu-pedir">
-               
-                <div class="menu-container">
-                    <!-- Card 1 -->
-                    <div class="menu-item">
-                        <img src="ogburger/AMBURGUESAS/DECKEROG.png" alt="Combo Para 2 Full">
-                        <div class="menu-info">
-                            <h3>Combo Para 2 Full</h3>
-                            <p>Dos burgers, dos fries, dos bebidas y cremas (mayonesa, ketchup y ají).</p>
-                            <div class="price-container">
-                                <span class="current-price">S/ 69.90</span>
-                                <span class="old-price">S/ 92.00</span>
-                                <div class="quantity-controls circle"> 
-                                    <button class="decrease">−</button> <!-- Botón de menos -->
-                                    <span id="quantity" class="quantity-value hidden">0</span> <!-- Contador inicia en 0 y está oculto -->
-                                    <button class="increase">+</button> <!-- Botón de más -->
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="menu-item">
-                        <img src="ogburger/AMBURGUESAS/DECKEROG.png" alt="Combo Para 2 Full">
-                        <div class="menu-info">
-                            <h3>Combo Para 2 Full</h3>
-                            <p>Dos burgers, dos fries, dos bebidas y cremas (mayonesa, ketchup y ají).</p>
-                            <div class="price-container">
-                                <span class="current-price">S/ 69.90</span>
-                                <span class="old-price">S/ 92.00</span>
-                                <div class="quantity-controls circle"> 
-                                    <button class="decrease">−</button> <!-- Botón de menos -->
-                                    <span id="quantity" class="quantity-value hidden">0</span> <!-- Contador inicia en 0 y está oculto -->
-                                    <button class="increase">+</button> <!-- Botón de más -->
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="menu-item">
-                        <img src="ogburger/AMBURGUESAS/DECKEROG.png" alt="Combo Para 2 Full">
-                        <div class="menu-info">
-                            <h3>Combo Para 2 Full</h3>
-                            <p>Dos burgers, dos fries, dos bebidas y cremas (mayonesa, ketchup y ají).</p>
-                            <div class="price-container">
-                                <span class="current-price">S/ 69.90</span>
-                                <span class="old-price">S/ 92.00</span>
-                                <div class="quantity-controls circle"> 
-                                    <button class="decrease">−</button> <!-- Botón de menos -->
-                                    <span id="quantity" class="quantity-value hidden">0</span> <!-- Contador inicia en 0 y está oculto -->
-                                    <button class="increase">+</button> <!-- Botón de más -->
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                    <div class="menu-item">
-                        <img src="ogburger/AMBURGUESAS/DECKEROG.png" alt="Combo Para 2 Full">
-                        <div class="menu-info">
-                            <h3>Combo Para 2 Full</h3>
-                            <p>Dos burgers, dos fries, dos bebidas y cremas (mayonesa, ketchup y ají).</p>
-                            <div class="price-container">
-                                <span class="current-price">S/ 69.90</span>
-                                <span class="old-price">S/ 92.00</span>
-                                <div class="quantity-controls circle"> 
-                                    <button class="decrease">−</button> <!-- Botón de menos -->
-                                    <span id="quantity" class="quantity-value hidden">0</span> <!-- Contador inicia en 0 y está oculto -->
-                                    <button class="increase">+</button> <!-- Botón de más -->
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-        </section>
+    </div>
 
 
-        <section id="menu-pedir">
-            <br>
-            <h2 class="menu-title">Fries</h2>
-            <br>
-          
-        </section>
 
-        <section id="menu-pedir">
-               
-                <div class="menu-container">
-                    <!-- Card 1 -->
-                    <div class="menu-item">
-                        <img src="ogburger/Fries/fries.png" alt="Combo Para 2 Full">
-                        <div class="menu-info">
-                            <h3>Combo Para 2 Full</h3>
-                            <p>Dos burgers, dos fries, dos bebidas y cremas (mayonesa, ketchup y ají).</p>
-                            <div class="price-container">
-                                <span class="current-price">S/ 69.90</span>
-                                <span class="old-price">S/ 92.00</span>
-                                <div class="quantity-controls circle"> 
-                                    <button class="decrease">−</button> <!-- Botón de menos -->
-                                    <span id="quantity" class="quantity-value hidden">0</span> <!-- Contador inicia en 0 y está oculto -->
-                                    <button class="increase">+</button> <!-- Botón de más -->
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="menu-item">
-                        <img src="ogburger/Fries/papascahok.jpg" alt="Combo Para 2 Full">
-                        <div class="menu-info">
-                            <h3>Combo Para 2 Full</h3>
-                            <p>Dos burgers, dos fries, dos bebidas y cremas (mayonesa, ketchup y ají).</p>
-                            <div class="price-container">
-                                <span class="current-price">S/ 69.90</span>
-                                <span class="old-price">S/ 92.00</span>
-                                <div class="quantity-controls circle"> 
-                                    <button class="decrease">−</button> <!-- Botón de menos -->
-                                    <span id="quantity" class="quantity-value hidden">0</span> <!-- Contador inicia en 0 y está oculto -->
-                                    <button class="increase">+</button> <!-- Botón de más -->
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="menu-item">
-                        <img src="ogburger/Fries/papaschedar.jpg" alt="Combo Para 2 Full">
-                        <div class="menu-info">
-                            <h3>Combo Para 2 Full</h3>
-                            <p>Dos burgers, dos fries, dos bebidas y cremas (mayonesa, ketchup y ají).</p>
-                            <div class="price-container">
-                                <span class="current-price">S/ 69.90</span>
-                                <span class="old-price">S/ 92.00</span>
-                                <div class="quantity-controls circle"> 
-                                    <button class="decrease">−</button> <!-- Botón de menos -->
-                                    <span id="quantity" class="quantity-value hidden">0</span> <!-- Contador inicia en 0 y está oculto -->
-                                    <button class="increase">+</button> <!-- Botón de más -->
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                        
+
+
+    <div class="container">
+        <h2>Fucking Combos</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="ogburger/AMBURGUESAS/DOUBLECLASICOG.png" alt="Combo Burger Trufada">
+                <div class="card-content">
+                    <h3>Combo Burger Trufada</h3>
+                    <p>1 Burger trufada + 1 fucking fries. Acompañado con el Fkn Ají, Ketchup y Mayo Garlic.</p>
+                    <div class="price">
+                        <span class="new-price">39.90</span>
+                        <span class="old-price">48.00</span>
+                        <button class="add-button">+</button>
+                    </div>            
+                </div>
+            </div>
+            <!-- Agrega más tarjetas similares aquí -->
+       
+
+        <div class="grid">
+            <div class="card">
+                <img src="ogburger/AMBURGUESAS/DOUBLECLASICOG.png" alt="Combo Burger Trufada">
+                <div class="card-content">
+                    <h3>Combo Burger Trufada</h3>
+                    <p>1 Burger trufada + 1 fucking fries. Acompañado con el Fkn Ají, Ketchup y Mayo Garlic.</p>
+                    <div class="price">
+                        <span class="new-price">39.90</span>
+                        <span class="old-price">48.00</span>
+                        <button class="add-button">+</button>
+                    </div>            
+                </div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <img src="ogburger/AMBURGUESAS/DOUBLECLASICOG.png" alt="Combo Burger Trufada">
+                <div class="card-content">
+                    <h3>Combo Burger Trufada</h3>
+                    <p>1 Burger trufada + 1 fucking fries. Acompañado con el Fkn Ají, Ketchup y Mayo Garlic.</p>
+                    <div class="price">
+                        <span class="new-price">39.90</span>
+                        <span class="old-price">48.00</span>
+                        <button class="add-button">+</button>
+                    </div>            
+                </div>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <img src="ogburger/AMBURGUESAS/DOUBLECLASICOG.png" alt="Combo Burger Trufada">
+                <div class="card-content">
+                    <h3>Combo Burger Trufada</h3>
+                    <p>1 Burger trufada + 1 fucking fries. Acompañado con el Fkn Ají, Ketchup y Mayo Garlic.</p>
+                    <div class="price">
+                        <span class="new-price">39.90</span>
+                        <span class="old-price">48.00</span>
+                        <button class="add-button">+</button>
+                    </div>            
+                </div>
+            </div>
+        </div>
+
+
+
+        
+
+
+
+
+
+        
+            <!-- Agrega más tarjetas similares aquí -->
+        </div>
+
+
+
+
+
+
+        <h2>Promociones</h2>
+        <div class="grid">
+            <div class="card">
+              
+                <img src="ogburger/AMBURGUESAS/DECKEROG.png" alt="Fkn Combo 2">
+                <div class="card-content">
+                    <h3>Fkn Combo 2</h3>
+                    <p>2 Burgers a elección + 2 fucking fries + 2 bebidas a elección.</p>
+                    <div class="price">
+                        <span class="new-price">39.90</span>
+                        <span class="old-price">48.00</span>
+                        <button class="add-button">+</button>
                     </div>
                     
-                
-            </div>
-        </section>
-
-
-
-        <section id="menu-pedir">
-            <br>
-            <h2 class="menu-title">Drinks</h2>
-            <br>
-          
-        </section>
-
-        <section id="menu-pedir">
-               
-                <div class="menu-container">
-                    <!-- Card 1 -->
-                    <div class="menu-item">
-                        <img src="ogburger/Drinks/incakola.jpg" alt="Combo Para 2 Full">
-                        <div class="menu-info">
-                            <h3>Combo Para 2 Full</h3>
-                            <p>Dos burgers, dos fries, dos bebidas y cremas (mayonesa, ketchup y ají).</p>
-                            <div class="price-container">
-                                <span class="current-price">S/ 69.90</span>
-                                <span class="old-price">S/ 92.00</span>
-                                <div class="quantity-controls circle"> 
-                                    <button class="decrease">−</button> <!-- Botón de menos -->
-                                    <span id="quantity" class="quantity-value hidden">0</span> <!-- Contador inicia en 0 y está oculto -->
-                                    <button class="increase">+</button> <!-- Botón de más -->
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                        
                     </div>
-                    <!-- Card 2 -->
-                    <div class="menu-item">
-                        <img src="ogburger/Drinks/cocacola.png" alt="Combo Para 2 Full">
-                        <div class="menu-info">
-                            <h3>Combo Para 2 Full</h3>
-                            <p>Dos burgers, dos fries, dos bebidas y cremas (mayonesa, ketchup y ají).</p>
-                            <div class="price-container">
-                                <span class="current-price">S/ 69.90</span>
-                                <span class="old-price">S/ 92.00</span>
-                                <div class="quantity-controls circle"> 
-                                    <button class="decrease">−</button> <!-- Botón de menos -->
-                                    <span id="quantity" class="quantity-value hidden">0</span> <!-- Contador inicia en 0 y está oculto -->
-                                    <button class="increase">+</button> <!-- Botón de más -->
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                
                 </div>
             </div>
-        </section>
+            <!-- Agrega más tarjetas similares aquí -->
+        </div>
+    </div>
 
 
 
-        
 
 
-        
-    
+
+
+
     <footer>
         <div class="footer-container">
             <!-- Fila 1: Imagen -->
@@ -437,6 +195,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
