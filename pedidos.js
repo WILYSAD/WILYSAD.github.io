@@ -1,444 +1,48 @@
-body, h1, h2, h3, p, ul, li, a, input, textarea, button {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+document.querySelectorAll('.menu-link').forEach(link => {
+    link.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const targetElement = document.getElementById(targetId);
 
-body {
-    line-height: 1.6;
-    color: #fff; 
-    font-family: Arial, sans-serif; 
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; 
-    background-image: url('ogburger/fondos/fodo.jpg');
-    background-size: cover; 
-    background-position: center; 
-    background-attachment: fixed; 
-    font-family: 'Bangers', cursive;
-}
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
 
-h2, h3 {
-    font-family: 'Technica Black', sans-serif;
-    font-weight: bold; 
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const quantityControls = document.querySelectorAll(".quantity-controls");
 
-@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-
-@font-face {
-    font-family: 'Technica Black';
-    src: url('path/to/Technica-Black.woff') format('woff'); 
-}
-
-h2, h3 {
-    font-family: 'Technica Black', sans-serif; 
-    font-weight: bold; 
-}
-
-body {
-    font-family: 'Bangers', cursive;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-
-header {
-    background: transparent;
-    color: #fff;
-    padding: 10px 20px;
-    position: static;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-sizing: border-box; 
-    overflow: hidden; 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  
-}
-
-
-
-header .logo {
-    height: 80px;
-    width: auto;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px; 
-    padding: 0;
-    margin: 0;
-    flex-wrap: nowrap;
-}
-
-@media screen and (max-width: 768px) {
-    header nav ul {
-        flex-direction: row; 
-        justify-content: center; 
-        width: 100%;
-        flex-wrap: wrap; 
-    }
-}
-header nav ul li {
-    margin: 0;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    font-family: 'Bangers', cursive;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-header nav ul li a.btn-iniciar {
-    background-color: rgba(51, 51, 51, 0.7);
-    padding: 8px 15px;
-    border-radius: 5px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1rem;
-    font-family: 'Bangers', cursive;
-}
-
-header nav ul li a.btn-iniciar:hover {
-    background-color: rgba(85, 85, 85, 0.9);
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-wrap: wrap;
-        justify-content: center;
+    function updateShape(quantity, control) {
+        const quantityDisplay = control.querySelector(".quantity-value");
+        
+        if (quantity === 0) {
+            control.classList.add("circle");
+            quantityDisplay.classList.add("hidden");
+        } else {
+            control.classList.remove("circle");
+            quantityDisplay.classList.remove("hidden");
+        }
     }
 
-    header .logo {
-        margin-bottom: 10px;
-    }
+    document.querySelectorAll('.quantity-controls').forEach(control => {
+        const decreaseButton = control.querySelector('.decrease');
+        const increaseButton = control.querySelector('.increase');
+        const quantityDisplay = control.querySelector('.quantity-value');
+    
+        // Incrementar contador
+        increaseButton.addEventListener('click', () => {
+            let currentValue = parseInt(quantityDisplay.textContent);
+            quantityDisplay.textContent = currentValue + 1;
+        });
+    
+        // Decrementar contador
+        decreaseButton.addEventListener('click', () => {
+            let currentValue = parseInt(quantityDisplay.textContent);
+            if (currentValue > 0) {
+                quantityDisplay.textContent = currentValue - 1;
+            }
+        });
+    });
+    
+});
 
-    header nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    header nav ul li {
-        margin-bottom: 10px;
-    }
-}
-
-
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #d50000;
-    color: white;
-    margin: 0;
-    padding: 0;
-}
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px 0;
-}
-h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-
-
-
-
-
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.card {
-    display: flex; /* Alinear imagen y texto en la misma fila */
-    align-items: center;
-    width: 450px; /* Ajusta el tamaño de la tarjeta */
-    background-color: black;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-}
-
-.card img {
-    width: 180px; /* Tamaño de la imagen */
-    height: auto;
-    border-radius: 10px;
-}
-
-.card-content {
-    flex: 1;
-    padding-left: 15px;
-    text-align: left;
-}
-
-.card-content h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.card-content p {
-    font-size: 14px;
-    color: #ccc;
-    margin-bottom: 10px;
-}
-
-.price {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Espacio entre los precios */
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.price span {
-    display: flex;
-    align-items: center;
-    gap: 5px; /* Espacio entre el número y el símbolo */
-}
-
-.old-price {
-    text-decoration: line-through;
-    color: red;
-    font-size: 16px;
-    opacity: 0.7;
-}
-
-.new-price {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* Hace que el símbolo de moneda aparezca después del número */
-.price span::after {
-    content: " S/";
-    font-weight: normal;
-    font-size: 16px;
-}
-
-
-.add-button {
-    background: #ff5722;
-    color: white;
-    border: none;
-    padding: 5px 12px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-left: auto; /* Empuja el botón a la derecha */
-}
-
-
-
-
-/* Se asegura que las tarjetas no cambien en pantallas pequeñas */
-@media (max-width: 768px) {
-    .menu-container {
-        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
-    }
-    .menu-item {
-        width: 100%; /* Cada tarjeta ocupa todo el ancho disponible */
-        height: auto; /* Ajusta la altura automáticamente */
-    }
-}
-
-
-
-
-
-
-
-.cart-wrapper {
-    position: fixed;
-    top: 100px; /* Ajusta según sea necesario */
-    right: 20px; /* Lo coloca en el lado derecho */
-    width: 300px; /* Ajusta el tamaño */
-    background: black;
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.cart-header {
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.cart-body {
-    padding: 10px;
-}
-
-.divider {
-    border: 1px solid gray;
-    margin: 10px 0;
-}
-
-.empty-message {
-    text-align: center;
-    font-size: 14px;
-}
-
-
-
-
-@media (max-width: 500px) {
-    .cart-wrapper {
-        display: none;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-footer {
-    margin-top: auto; 
-    background-color: #333;
-    color: #fff;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.footer-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr; 
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-logo img {
-    width: 150px;
-    height: auto;
-}
-
-.footer-about, .footer-socials, .footer-account {
-    text-align: left;
-}
-
-.footer-about h3, .footer-socials h3, .footer-account h3 {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.footer-about p, .footer-account ul {
-    font-size: 0.9rem;
-}
-
-.footer-socials ul, .footer-account ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-socials ul li, .footer-account ul li {
-    margin-bottom: 10px;
-}
-
-.footer-socials ul li a, .footer-account ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.footer-socials ul li a:hover, .footer-account ul li a:hover {
-    text-decoration: underline;
-}
-
-.footer-socials img {
-    width: 30px;
-    margin-right: 15px;
-}
-
-
-@media (max-width: 768px) {
-   
-    header {
-      
-        align-items: center;
-        text-align: center;
-    }
-
-    header nav ul {
-       
-        gap: 10px;
-    }
-
-   
-    header .logo {
-        height: 60px;
-    }
-
-    section {
-        padding: 20px;
-    }
-
- 
-    .carousel-container {
-        height: 40vh;
-    }
-
-    .carousel-item img {
-        width: 100vw;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .menu-items, .menu-especial-items {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .menu-item, .especial-item{
-        width: 90%;
-    }
-
-   
-    .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .footer-logo img {
-        width: 100px;
-    }
-}
