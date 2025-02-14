@@ -14,7 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; 
-    background-image: url('ogburger/fondos/fodo.jpg');
+    background-image: url('ogburger/fondos/.jpg');
     background-size: cover; 
     background-position: center; 
     background-attachment: fixed; 
@@ -171,13 +171,13 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .card {
-    display: flex; /* Alinear imagen y texto en la misma fila */
+    display: flex;
     align-items: center;
-    width: 450px; /* Ajusta el tamaño de la tarjeta */
+    width: 400px; /* Reducido el ancho */
     background-color: black;
     border-radius: 10px;
     overflow: hidden;
@@ -186,9 +186,11 @@ h2 {
 }
 
 .card img {
-    width: 180px; /* Tamaño de la imagen */
-    height: auto;
-    border-radius: 10px;
+    width: 150px; /* Ajustado para que cubra el borde izquierdo */
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .card-content {
@@ -211,7 +213,7 @@ h2 {
 .price {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espacio entre los precios */
+    gap: 10px;
     font-size: 18px;
     font-weight: bold;
 }
@@ -219,7 +221,7 @@ h2 {
 .price span {
     display: flex;
     align-items: center;
-    gap: 5px; /* Espacio entre el número y el símbolo */
+    gap: 5px;
 }
 
 .old-price {
@@ -234,13 +236,11 @@ h2 {
     font-weight: bold;
 }
 
-/* Hace que el símbolo de moneda aparezca después del número */
 .price span::after {
     content: " S/";
     font-weight: normal;
     font-size: 16px;
 }
-
 
 .add-button {
     background: #ff5722;
@@ -250,8 +250,9 @@ h2 {
     font-size: 18px;
     cursor: pointer;
     border-radius: 5px;
-    margin-left: auto; /* Empuja el botón a la derecha */
+    margin-left: auto;
 }
+
 
 
 
@@ -273,17 +274,42 @@ h2 {
 
 
 
+
+
 .cart-wrapper {
-    position: fixed;
-    top: 100px; /* Ajusta según sea necesario */
-    right: 20px; /* Lo coloca en el lado derecho */
-    width: 300px; /* Ajusta el tamaño */
+    position: absolute;
+    top: 50px; /* Ajusta según sea necesario */
+    right: -50px; /* Ajusta más a la derecha dentro del .container */
+    width: 300px;
     background: black;
     color: white;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
+.where-to-order {
+    display: block;
+    width: 100%;
+    background: #ff56222d;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.where-to-order:hover {
+    background: #19e6a9de;
+}
+
 
 .cart-header {
     font-size: 18px;
